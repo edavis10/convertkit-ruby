@@ -27,6 +27,10 @@ module Convertkit
         end
         response.body
       end
+
+      def remove_tag_from_subscriber(subscriber_id, tag_id, options = {})
+        response = connection.delete("subscribers/#{subscriber_id}/tags/#{tag_id}")
+      end
     end
   end
 end
